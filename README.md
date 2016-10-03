@@ -25,9 +25,9 @@ WORKLOADS
 
    * Start Ansible playbook from osops-tools-contrib/ansible/lampstack folder
 
-      .. code-block:: bash
-        
+      ```        
         ansible-playbook -e "action=apply env=osic password=XXXXX" site.yml
+       ```
 
    * Provision 4 nodes
    * Create security group
@@ -56,9 +56,9 @@ WORKLOADS
 3. Flow:
    * Start Ansible playbook from osops-tools-contrib/ansible/dockerswarm folder
 
-     .. code-block:: bash
-       
+     ```
        ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
+      ```
 
    * Provision 3 coreos nodes on your cloud
    * Create security group
