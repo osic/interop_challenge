@@ -1,0 +1,22 @@
+---
+horizon_url: "https://cloud1.osic.org"
+
+auth: {
+  auth_url: "https://cloud1.osic.org:5000/v2.0",
+  username: "{{ username }}",
+  password: "{{ password }}",
+  domain_name: "default",
+  project_name: "{{ project }}"
+}
+
+app_env: {
+  image_name: "coreos",
+  region_name: "RegionOne",
+  private_net_name: "interopnet",
+  net_device: "eth0",
+  flavor_name: "m1.small",
+  public_key_file: "/home/ubuntu/.ssh/id_rsa.pub",
+  swarm_version: "latest",
+  swarm_size: 3,
+  fqdn: "swarm.example.com",
+}
