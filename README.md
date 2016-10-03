@@ -1,6 +1,5 @@
-********************************
 OSIC Interoperability Challenge
-********************************
+===============================
 
 This repository contain the details from environment creation to test case
 execution for OSIC OpenStack Interoperability Challenge participation.
@@ -13,15 +12,15 @@ About [RefStack Tools](https://wiki.openstack.org/wiki/RefStack)
 
 
 WORKLOADS
-##########
+---------
 
-LAMP Stack
+**LAMP Stack**
 **********
 
 **Details:**
 
 1. Tool: Ansible
-2. Repo: https://github.com/openstack/osops-tools-contrib/ansible/lampstack
+2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/lampstack
 3. Flow: 
 
    * Start Ansible playbook from osops-tools-contrib/ansible/lampstack folder
@@ -47,13 +46,13 @@ LAMP Stack
    * Remove not needed floating IPs from servers which do not need them.
 
 
-Docker Swarm
+**Docker Swarm**
 **********
 
 **Details:**
 
 1. Tool: Ansible
-2. Repo: https://github.com/openstack/osops-tools-contrib/ansible/dockerswarm
+2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/dockerswarm
 3. Flow:
    * Start Ansible playbook from osops-tools-contrib/ansible/dockerswarm folder
 
@@ -68,7 +67,7 @@ Docker Swarm
    * Display a set of environment variables that you can use to run docker commands
 
 
-Deployer VM Pre-Requisites:
+**Deployer VM Pre-Requisites:**
 **********
 
 One deployer to run them all -- Use a disposable VM to fire the workloads (cloud VM, vagrant, virtualbox).
