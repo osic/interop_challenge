@@ -11,7 +11,7 @@ About the [Interops Working Group a.k.a. Defcore](https://wiki.openstack.org/wik
 About [RefStack Tools](https://wiki.openstack.org/wiki/RefStack)
 
 
-WORKLOADS
+THE WORKLOADS
 ---------
 
 **LAMP Stack**
@@ -21,13 +21,13 @@ WORKLOADS
 
 1. Tool: Ansible
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/lampstack
-3. Flow: 
-
-   * Start Ansible playbook from osops-tools-contrib/ansible/lampstack folder
+3. Start Ansible from osops-tools-contrib/ansible/lampstack folder
 
       ```        
-        ansible-playbook -e "action=apply env=osic password=XXXXX" site.yml
+        ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
        ```
+
+4. Workload Creation Flow: 
 
    * Provision 4 nodes
    * Create security group
@@ -53,13 +53,13 @@ WORKLOADS
 
 1. Tool: Ansible
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/dockerswarm
-3. Flow:
-   * Start Ansible playbook from osops-tools-contrib/ansible/dockerswarm folder
+3. Start Ansible from osops-tools-contrib/ansible/dockerswarm folder
 
-     ```
-       ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
-      ```
+      ```        
+        ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
+       ```
 
+4. Workload Creation Flow: 
    * Provision 3 coreos nodes on your cloud
    * Create security group
    * Add security rules to allow ping, ssh, docker access
@@ -72,39 +72,36 @@ WORKLOADS
 
 One deployer to run them all -- Use a disposable VM to fire the workloads (cloud VM, vagrant, virtualbox).
 
-1. [Install Ansible](http://docs.ansible.com/ansible/intro_installation.html)
-2. [Install openstack shade] (http://docs.openstack.org/infra/shade/installation.html)
-3. Make sure there are images available on your cloud:
+Use **deployer_novenv.sh** or **deployer_venv.sh** from this repo to install all required packages on your deployer VM (assume Ubuntu14.04)
 
+1. Required Packages Installed by deployer_noenv.sh:
+    * Install development packages
+    * [Install Ansible](http://docs.ansible.com/ansible/intro_installation.html)
+    * [Install openstack shade] (http://docs.openstack.org/infra/shade/installation.html)
+    * Clone  http://git.openstack.org/cgit/openstack/osops-tools-contrib repo
+    * Create key-pair
+    * Create OSIC cloud1 Cloud Details:
+       * osops-tools-contrib/ansible/lampstack/vars/cloud1
+       * osops-tools-contrib/ansible/dockerswarm/vars/cloud1
+    * Install docker client
+        * apt-get -y install docker.io
+        * ln -sf /usr/bin/docker.io /usr/local/bin/docker
+    * Disable strict host key checks:
+        * echo "StrictHostKeyChecking no" to /etc/ssh/ssh_config under "Hosts *"
+    * [Install RefStack client](https://github.com/openstack/refstack-client)
+
+2. Make sure there are images available on your cloud:
     * An Ubuntu cloud image.
     * An OpenStack coreos image.
-    
-4. Clone osops repo
-5. Create key-pair
-6. Provide Cloud Details:
 
-    * osops-tools-contrib/ansible/lampstack/vars/cloud1
-    * osops-tools-contrib/ansible/dockerswarm/vars/cloud1
-
-7. Install docker client
-
-    * apt-get -y install docker.io
-    * ln -sf /usr/bin/docker.io /usr/local/bin/docker
-
-8. Disable strict host key checks:
-
-    * Add "StrictHostKeyChecking no" to /etc/ssh/ssh_config under "Hosts *"
-
-**NOTE:** Refer to the osops repo for further details.
-
-**NOTE:** Use **deployer_novenv.sh** or **deployer_venv.sh** to install pre-reqs on your deployer VM (assume Ubuntu14.04)
+**NOTE:** Refer to the osops-tools-contrib repo for further details.
 
 
 RESULTS
 --------
 
 * Interops Challenge Results [email report](http://lists.openstack.org/pipermail/defcore-committee/2016-October/001286.html)
-* Refstack Results:
-    * [2016.01](https://refstack.openstack.org/#/results/c66d2ded-7b26-4e0e-8efa-dbbcd5a1526b)
-    * [2016.08](https://refstack.openstack.org/#/results/a25bb6b0-82f7-4102-9eb0-dcb86b876cf8)
+* RefStack Results:
+    * [Against Defcore Guideline 2016.01](https://refstack.openstack.org/#/results/c66d2ded-7b26-4e0e-8efa-dbbcd5a1526b)
+    * [Against Defcore Guideline 2016.08](https://refstack.openstack.org/#/results/a25bb6b0-82f7-4102-9eb0-dcb86b876cf8)
 
