@@ -32,9 +32,9 @@ sudo pip install shade
 
 # Configure workloads
 #echo "cloud ansible_python_interpreter=$python_interpreter/python" >> ~/osops-tools-contrib/ansible/lampstack/hosts
-wget https://raw.githubusercontent.com/dlux/os_interop_challenge/master/osic.lamp.yml -O ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
+wget https://raw.githubusercontent.com/osic/interops_challenge/master/osic.lamp.yml -O ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
 chmod +x ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
-wget https://raw.githubusercontent.com/dlux/os_interop_challenge/master/osic.swarm.yml -O ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
+wget https://raw.githubusercontent.com/osic/interops_challenge/master/osic.swarm.yml -O ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
 chmod +x ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
 
 # Disable strict key check
