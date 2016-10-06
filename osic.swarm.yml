@@ -11,12 +11,14 @@ auth: {
 
 app_env: {
   image_name: "coreos",
-  region_name: "RegionOne",
   private_net_name: "interopnet",
   net_device: "eth0",
   flavor_name: "m1.small",
-  public_key_file: "/home/ubuntu/.ssh/id_rsa.pub",
   swarm_version: "latest",
   swarm_size: 3,
+  region_name: "RegionOne",
+  availability_zone: "nova",
+  validate_certs: True,
   fqdn: "swarm.example.com",
+  public_key_file: "/home/ubuntu/.ssh/id_rsa.pub"
 }
