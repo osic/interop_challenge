@@ -2,7 +2,7 @@
 horizon_url: "https://cloud1.osic.org"
 
 auth: {
-  auth_url: "https://cloud1.osic.org:5000/v2.0",
+  auth_url: "https://cloud1.osic.org:5000/v3",
   username: "{{ username }}",
   password: "{{ password }}",
   domain_name: "default",

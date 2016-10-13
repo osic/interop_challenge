@@ -2,18 +2,21 @@
 horizon_url: "https://cloud1.osic.org"
 
 auth: {
-  auth_url: "https://cloud1.osic.org:5000/v2.0",
+  auth_url: "https://cloud1.osic.org:5000/v3",
   username: "{{ username }}",
   password: "{{ password }}",
+  domain_name: "default",
   project_name: "{{ project }}"
 }
 
 app_env: {
+  ssh_user: "ubuntu",
   image_name: "ubuntu-server-14.04",
-  region_name: "RegionOne",
+  region_name: "",
   availability_zone: "nova",
   validate_certs: True,
   private_net_name: "interopnet",
+  #public_net_name: "GATEWAY_NET",
   flavor_name: "m1.small",
   public_key_file: "/home/ubuntu/.ssh/id_rsa.pub",
   stack_size: 4,

@@ -23,8 +23,8 @@ THE WORKLOADS
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/lampstack
 3. Start Ansible from osops-tools-contrib/ansible/lampstack folder
 
-      ```        
-        ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
+      ```
+        ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
        ```
 
 4. Workload Creation Flow: 
@@ -55,9 +55,9 @@ THE WORKLOADS
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/dockerswarm
 3. Start Ansible from osops-tools-contrib/ansible/dockerswarm folder
 
-      ```        
-        ansible-playbook -e "action=apply env=osic username=XXXX password=YYYY project=ZZZZ" site.yml
-       ```
+      ```
+        ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
+      ```
 
 4. Workload Creation Flow: 
    * Provision 3 coreos nodes on your cloud
