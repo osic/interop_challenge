@@ -23,9 +23,9 @@ THE WORKLOADS
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/lampstack
 3. Start Ansible from osops-tools-contrib/ansible/lampstack folder
 
-      ```
-        ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
-       ```
+   ```
+   ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
+   ```
 
 4. Workload Creation Flow: 
 
@@ -55,9 +55,9 @@ THE WORKLOADS
 2. Repo: http://git.openstack.org/cgit/openstack/osops-tools-contrib/tree/ansible/dockerswarm
 3. Start Ansible from osops-tools-contrib/ansible/dockerswarm folder
 
-      ```
-        ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
-      ```
+   ```
+   ansible-playbook site.yml -e "action=apply env=osic username=$OS_USERNAME password=$OS_PASSWORD project=$OS_PROJECT_NAME"
+   ```
 
 4. Workload Creation Flow: 
    * Provision 3 coreos nodes on your cloud
@@ -74,20 +74,20 @@ One deployer to run them all -- Use a disposable VM to fire the workloads (cloud
 
 Use this repo to install required packages:
 
-      ```
-        # If disposable VM available, get deployer_novenv.sh or deployer_venv.sh
-        wget https://raw.githubusercontent.com/osic/interops_challenge/master/deployer_novenv.sh
-        ./deployer_novenv.sh
+```
+# If disposable VM available, get deployer_novenv.sh or deployer_venv.sh
+wget https://raw.githubusercontent.com/osic/interops_challenge/master/deployer_novenv.sh
+./deployer_novenv.sh
 
-        # If using virtual box - Use our Vagrantfile
-        git clone https://github.com/osic/interops_challenge.git
-        cd interops_challenge
-        vagrant up
-        vagrant ssh
-        
-        # Source openrc.sh to set $OS_ environment variables
-        source openrc.sh
-      ```
+# If using virtual box - Use our Vagrantfile
+git clone https://github.com/osic/interops_challenge.git
+cd interops_challenge
+vagrant up
+vagrant ssh
+
+# Source openrc.sh to set $OS_ environment variables
+source openrc.sh
+```
 
 1. Required Packages Installed by deployer_noenv.sh:
     * Install development packages
