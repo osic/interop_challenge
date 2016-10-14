@@ -75,14 +75,18 @@ One deployer to run them all -- Use a disposable VM to fire the workloads (cloud
 Use this repo to install required packages:
 
       ```
-      # If disposable VM available, get deployer_novenv.sh or deployer_venv.sh
-      wget https://raw.githubusercontent.com/osic/interops_challenge/master/deployer_novenv.sh
-      ./deployer_novenv.sh
-      
-      # If using virtual box - Use our Vagrantfile
-      git clone https://github.com/osic/interops_challenge.git
-      cd interops_challenge
-      vagrant up
+        # If disposable VM available, get deployer_novenv.sh or deployer_venv.sh
+        wget https://raw.githubusercontent.com/osic/interops_challenge/master/deployer_novenv.sh
+        ./deployer_novenv.sh
+
+        # If using virtual box - Use our Vagrantfile
+        git clone https://github.com/osic/interops_challenge.git
+        cd interops_challenge
+        vagrant up
+        vagrant ssh
+        
+        # Source openrc.sh to set $OS_ environment variables
+        source openrc.sh
       ```
 
 1. Required Packages Installed by deployer_noenv.sh:
