@@ -16,7 +16,7 @@ app_env: {
   availability_zone: "nova",
   validate_certs: True,
   private_net_name: "interopnet",
-  #public_net_name: "GATEWAY_NET",
+  public_net_name: "GATEWAY_NET",
   flavor_name: "m1.small",
   public_key_file: "/home/ubuntu/.ssh/id_rsa.pub",
   stack_size: 4,

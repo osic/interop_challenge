@@ -8,6 +8,7 @@ sudo apt-get install -y --force-yes build-essential libssl-dev libffi-dev python
 
 sudo wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
+sudo rm get-pip.py
 
 # Install docker client
 sudo apt-get install -y docker.io
