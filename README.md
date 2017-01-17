@@ -6,7 +6,7 @@ execution for OSIC OpenStack Interoperability Challenge participation.
 
 About the [OpenStack Interoperability Challenge](https://wiki.openstack.org/wiki/Interop_Challenge)
 
-About the [Interops Working Group a.k.a. Defcore](https://wiki.openstack.org/wiki/Governance/DefCoreCommittee)
+About the [Interop Working Group a.k.a. Defcore](https://wiki.openstack.org/wiki/Governance/DefCoreCommittee)
 
 About [RefStack Tools](https://wiki.openstack.org/wiki/RefStack)
 
@@ -115,7 +115,7 @@ source openrc.sh
 RESULTS
 --------
 
-* Interops Challenge Results [email report](http://lists.openstack.org/pipermail/defcore-committee/2016-October/001286.html)
+* Interop Challenge Results [email report](http://lists.openstack.org/pipermail/defcore-committee/2016-October/001286.html)
 * RefStack Results:
     * [Against Defcore Guideline 2016.01](https://refstack.openstack.org/#/results/c66d2ded-7b26-4e0e-8efa-dbbcd5a1526b)
     * [Against Defcore Guideline 2016.08](https://refstack.openstack.org/#/results/a25bb6b0-82f7-4102-9eb0-dcb86b876cf8)
