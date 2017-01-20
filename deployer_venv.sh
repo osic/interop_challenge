@@ -23,9 +23,9 @@ ssh-add ~/.ssh/id_rsa
 # Clone OSOPS TOOLS project
 git clone https://github.com/openstack/osops-tools-contrib.git ~/osops-tools-contrib
 
-# Create virtual environment .interops
-virtualenv .interops
-python_interpreter=.interops/bin
+# Create virtual environment .interop
+virtualenv .interop
+python_interpreter=.interop/bin
 
 # Install ansible on the venv
 $python_interpreter/pip install ansible==2.1.2.0
@@ -35,9 +35,9 @@ $python_interpreter/pip install shade==1.12.1
 # Configure Workloads -- Comment since added in osops repo
 #echo "cloud ansible_python_interpreter=$python_interpreter/python" >> ~/osops-tools-contrib/ansible/lampstack/hosts
 #echo "cloud ansible_python_interpreter=$python_interpreter/python" >> ~/osops-tools-contrib/ansible/dockerswarm/hosts
-wget https://raw.githubusercontent.com/osic/interops_challenge/master/osic.lamp.yml -O ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
+wget https://raw.githubusercontent.com/osic/interop_challenge/master/osic.lamp.yml -O ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
 chmod +x ~/osops-tools-contrib/ansible/lampstack/vars/osic.yml
-wget https://raw.githubusercontent.com/osic/interops_challenge/master/osic.swarm.yml -O ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
+wget https://raw.githubusercontent.com/osic/interop_challenge/master/osic.swarm.yml -O ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
 chmod +x ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
 
 # Disable strict key check -- Comment since added in osops via ansible.cfg
@@ -47,5 +47,5 @@ chmod +x ~/osops-tools-contrib/ansible/dockerswarm/vars/osic.yml
 
 echo "========================================"
 echo "Activate virtual environment by running:"
-echo "     source .interops/bin/activate"
+echo "     source .interop/bin/activate"
 echo "========================================"
